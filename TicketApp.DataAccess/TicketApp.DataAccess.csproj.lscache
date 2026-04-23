@@ -53,6 +53,11 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
+Context/AppDbContext.cs
+Migrations/
+ 20260423193433_InitialCreate.cs
+ 20260423193433_InitialCreate.Designer.cs
+ AppDbContextModelSnapshot.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
  TicketApp.DataAccess.AssemblyInfo.cs

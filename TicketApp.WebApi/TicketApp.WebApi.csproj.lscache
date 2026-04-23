@@ -388,8 +388,11 @@ WeatherForecast.cs
  microsoft.identitymodel.protocols.openidconnect/6.35.0/lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
  microsoft.identitymodel.protocols/6.35.0/lib/net6.0/Microsoft.IdentityModel.Protocols.dll
  microsoft.identitymodel.tokens/6.35.0/lib/net6.0/Microsoft.IdentityModel.Tokens.dll
- microsoft.openapi/1.6.17/lib/netstandard2.0/Microsoft.OpenApi.dll
+ microsoft.openapi/2.4.1/lib/net8.0/Microsoft.OpenApi.dll
  microsoft.sqlserver.server/1.0.0/lib/netstandard2.0/Microsoft.SqlServer.Server.dll
+ swashbuckle.aspnetcore.swagger/10.1.7/lib/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+ swashbuckle.aspnetcore.swaggergen/10.1.7/lib/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+ swashbuckle.aspnetcore.swaggerui/10.1.7/lib/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
  system.clientmodel/1.0.0/lib/net6.0/System.ClientModel.dll
  system.identitymodel.tokens.jwt/6.35.0/lib/net6.0/System.IdentityModel.Tokens.Jwt.dll
  system.memory.data/1.0.2/lib/netstandard2.0/System.Memory.Data.dll
