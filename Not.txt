@@ -1,0 +1,115 @@
+Proje Yapısı
+
+1- Yeni boş bir Solution oluşturduk
+
+dotnet new sln -n TicketProject
+
+2- Katmanları oluşturduk
+
+DataAccess
+Business
+Core
+WebApi
+
+dotnet new classlib -n TicketProject.DataAccess
+dotnet new classlib -n TicketProject.Business
+dotnet new classlib -n TicketProject.Core
+dotnet new webapi -n TicketProject.WebApi --use-controllers
+
+3-Projeleri Solutiona Ekledik
+
+dotnet sln add TicketProject.Core/TicketProject.Core.csproj
+dotnet sln add TicketProject.Business/TicketProject.Business.csproj
+dotnet sln add TicketProject.DataAccess/TicketProject.DataAccess.csproj
+dotnet sln add TicketProject.WebApi/TicketProject.WebApi.csproj
+
+Toplu Ekleme Yapmak İçin: dotnet sln add **/*.csproj
+
+4-Katmanlar Arası Referansları Ver
+
+dotnet add TicketProject.DataAccess reference TicketProject.Core
+dotnet add TicketProject.Business reference TicketProject.Core
+dotnet add TicketProject.WebApi reference TicketProject.Business
+dotnet add TicketProject.Business reference TicketProject.DataAccess
+
+5- Entitylerin Oluşturulması
+Core > Entities
+                >BaseEntity.cs
+                > Category.cs
+                > Product.cs
+
+6-EntityFramework Core Paketlerinin Kurulması
+
+DataAccess Katmanına Kurulacak Paketler:
+
+dotnet add TicketProject.DataAccess package Microsoft.EntityFrameworkCore --version 9.0.0
+dotnet add TicketProject.DataAccess package Microsoft.EntityFrameworkCore.SqlServer --version 9.0.0
+dotnet add TicketProject.DataAccess package Microsoft.EntityFrameworkCore.Design --version 9.0.0
+dotnet add TicketProject.DataAccess package Microsoft.EntityFrameworkCore.Tools --version 9.0.0
+
+WebApi Katmanına Kurulacak Paketler
+dotnet add TicketProject.WebApi package Microsoft.EntityFrameworkCore.Design --version 9.0.0
+
+
+7-Context Sınıfının Oluşturulması
+
+DataAccess > Context > AppDbContext.cs
+
+    Tablolar belirlendi.
+    DbSet<Category> Categories
+    DbSet<Product> Products
+
+    OnModelCreating()
+
+8-appsettings.json Dosyasına ConnectionString Ekleme
+
+,
+  "ConnectionStrings": {
+    "DefaultConnection":"Server=(localdb)\\MSSQLLocalDB;Database=TicketAppDb;Trusted_Connection=True;"
+  }
+
+9-Program.cs Connection için DI Ayarı:
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+});
+
+10-Swagger Ayarları Yapılır:
+Alternatif: Postman
+
+    Kurulum:
+
+    dotnet add TicketProject.WebApi package Swashbuckle.AspNetCore
+    
+    Program.cs Ayarı:
+
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+11-Ef Core Kurulumu:
+dotnet tool install --global dotnet-ef
+
+    Kontrol: dotnet ef
+
+12-Migration
+DataAccess Projesinde Yapılır.
+
+InitialCreate  (Herhangi bir dosya adıdır.)
+
+dotnet ef migrations add InitialCreate --project TicketProject.DataAccess --startup-project TicketProject.WebApi
+
+
+13-Update Database
+dotnet ef database update --project TicketProject.DataAccess --startup-project TicketProject.WebApi

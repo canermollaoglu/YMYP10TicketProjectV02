@@ -62,9 +62,14 @@ obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
  TicketApp.DataAccess.AssemblyInfo.cs
  TicketApp.DataAccess.GlobalUsings.g.cs
+Repositories/
+ CategoryRepository.cs
+ GenericRepository.cs
+ ProductRepository.cs
 
 [metadataReferences]
-../../../../../Program Files/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.10/ref/net9.0/
+../TicketApp.Core/obj/Debug/net9.0/ref/TicketApp.Core.dll
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/9.0.10/ref/net9.0/
  Microsoft.CSharp.dll
  Microsoft.VisualBasic.Core.dll
  Microsoft.VisualBasic.dll
@@ -229,7 +234,6 @@ obj/Debug/net9.0/
  System.Xml.XPath.dll
  System.Xml.XPath.XDocument.dll
  WindowsBase.dll
-../TicketApp.Core/obj/Debug/net9.0/ref/TicketApp.Core.dll
 <NUGET>/
  azure.core/1.38.0/lib/net6.0/Azure.Core.dll
  azure.identity/1.11.4/lib/netstandard2.0/Azure.Identity.dll
@@ -263,14 +267,14 @@ obj/Debug/net9.0/
  system.security.cryptography.protecteddata/6.0.0/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 
 [analyzerReferences]
-../../../../../Program Files/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.10/analyzers/dotnet/cs/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/9.0.10/analyzers/dotnet/cs/
  Microsoft.Interop.ComInterfaceGenerator.dll
  Microsoft.Interop.JavaScript.JSImportGenerator.dll
  Microsoft.Interop.LibraryImportGenerator.dll
  Microsoft.Interop.SourceGeneration.dll
  System.Text.Json.SourceGeneration.dll
  System.Text.RegularExpressions.Generator.dll
-../../../../../Program Files/dotnet/sdk/9.0.306/Sdks/Microsoft.NET.Sdk/analyzers/
+<DOTNET>/sdk/9.0.306/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
 <NUGET>/microsoft.codeanalysis.analyzers/3.3.4/analyzers/dotnet/cs/
@@ -282,5 +286,5 @@ obj/Debug/net9.0/
  microsoft.extensions.options/9.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
 
 [analyzerConfigFiles]
-../../../../../Program Files/dotnet/sdk/9.0.306/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_9_default.globalconfig
+<DOTNET>/sdk/9.0.306/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_9_default.globalconfig
 obj/Debug/net9.0/TicketApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
