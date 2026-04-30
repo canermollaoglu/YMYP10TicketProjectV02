@@ -113,3 +113,26 @@ dotnet ef migrations add InitialCreate --project TicketProject.DataAccess --star
 
 13-Update Database
 dotnet ef database update --project TicketProject.DataAccess --startup-project TicketProject.WebApi
+
+Proje Alt Yapı Tasarımı
+14-CORE > Interfaces
+            IGenericRepository.cs
+            IProductRepository.cs
+
+15-DATAACESS > Repositories
+            GenericRepository.cs
+            CategoryRepository.cs
+            ProductRepository.cs
+
+16-CORE > Interfaces
+            IService.cs
+
+    BUSINESS > Services
+            ProductService.cs
+            CategoryService.cs
+    
+17-Fluent Validation
+    BUSINESS > Validators
+    
+    Aşağıdaki komut yardımı ile Fluent Validation paketi business katmanına yüklendi.
+    dotnet add TicketApp.Business  package FluentValidation

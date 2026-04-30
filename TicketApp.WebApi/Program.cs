@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using TicketApp.Business.Services;
+using TicketApp.Core.Entities;
+using TicketApp.Core.Interfaces;
 using TicketApp.DataAccess.Context;
+using TicketApp.DataAccess.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +20,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<ProductRepository>();
 
 var app = builder.Build();
 

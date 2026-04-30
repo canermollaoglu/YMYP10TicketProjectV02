@@ -25,7 +25,7 @@ namespace TicketApp.DataAccess.Repositories
 
         public async Task<IEnumerable<Product>> GetByPriceRange(decimal minPrice, decimal maxPrice)
         {
-            return await _context.Products.Where(p => p.Price >= minPrice && p.Price <= maxPrice).ToListAsync());
+            return await _context.Products.Where(p => p.Price >= minPrice && p.Price <= maxPrice).ToListAsync();
         }
 
         public async Task<IEnumerable<Product>> GetProductsWithCategoryAsync()
