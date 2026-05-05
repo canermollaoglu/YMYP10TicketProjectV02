@@ -3,13 +3,13 @@ using TicketApp.Core.Entities;
 
 namespace TicketApp.Core.Interfaces
 {
-    public interface IService<T> where T : BaseEntity
+    public interface IService<TResponseDTO, TUpdateDTO, TCreateDTO>
     {
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T?> GetByIdAsync(Guid id);
-        Task AddAsync(T entity);
-        Task UpdateAsync(T entity);
+        Task<IEnumerable<TResponseDTO>> GetAllAsync();
+        Task<TResponseDTO?> GetByIdAsync(Guid id);
+        Task<TResponseDTO> AddAsync(TCreateDTO entity);
+        Task UpdateAsync(Guid id, TUpdateDTO entity);
         Task DeleteAsync(Guid id);
-        Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<TResponseDTO>> FindAsync(Expression<Func<Product, bool>> predicate);
     }
 }

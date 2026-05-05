@@ -53,6 +53,10 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
+DTOs/
+ ProductCreateDTO.cs
+ ProductResponseDTO.cs
+ ProductUpdate.DTO.cs
 Entities/
  BaseEntity.cs
  Category.cs
@@ -60,6 +64,7 @@ Entities/
 Interfaces/
  IGenericRepository.cs
  IProductRepository.cs
+ IProductService.cs
  IService.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
